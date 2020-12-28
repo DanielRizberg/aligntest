@@ -1,0 +1,43 @@
+.arrow-button-left{
+    top:40%;
+    left:40%;
+    opacity: 0.8;
+    
+}
+.arrow-button-left:hover{
+    opacity: 1;
+}
+.arrow-button-right{
+    top:40%;
+    right:40%;
+    opacity: 0.8;
+   
+
+}
+.arrow-button-right:hover{
+    opacity: 1;
+}
+.card-body{padding: 0;}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 25px;
+    height: 25px;
+}
+.slide-left{
+    animation-name:moveLeft;
+	animation-duration:3s;
+	animation-timing-function: ease-in-out;
+	
+}
+.slide-right{
+    animation-name:moveRight;
+	animation-duration:3s;
+	animation-timing-function:ease;
+}
+@keyframes moveLeft {
+   from {transform:translatex(0px)}
+   to {transform:translatex(-45px)}
+ }
+ @keyframes moveRight {
+    from {transform:translatex(0px)}
+   to {transform:translatex(45px)}
+ }

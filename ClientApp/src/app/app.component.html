@@ -1,0 +1,55 @@
+<div class="container-fluid mt-5" *ngIf="currentImages else loadingTempalte"> 
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img [src]="getImageUrl(viewImage)" height="300" alt="loading">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h2 class="m-auto">{{viewImage.author}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body ">
+                    <div class="list-inline m-auto text-center ">
+
+
+
+
+                        <div class="list-inline-item position-relative" *ngFor="let item of currentImages;let i=index;">
+                            <a *ngIf="i===0" class="position-absolute  arrow-button-left " [ngClass]="{'slide-left':isSlideLeft}" (click)="moveleft()">
+                                <i  class="carousel-control-prev-icon"></i>
+                            </a>
+                            <img [src]="getImageUrl(item)"  height="100" width="100" alt="loading">
+                            <a *ngIf="i===4" class="arrow-button-right  position-absolute " [ngClass]="{'slide-right':isSlideRight}" (click)="moveRight()">
+                                <i class="carousel-control-next-icon"></i>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<ng-template #loadingTempalte>
+    <h1 class="m-auto">loading ...</h1>
+</ng-template>
